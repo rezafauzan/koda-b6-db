@@ -98,4 +98,6 @@ title: Coffeeshop Entity Relation Diagram
 
     users only one to only one roles : has
     users only one to one or more carts : has
+    cart_items one or more to only one carts : has
+    cart_items only one to only one products : has
 ```
