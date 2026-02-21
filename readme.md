@@ -74,4 +74,18 @@ title: Coffeeshop Entity Relation Diagram
         TIMESTAMP created_at
         TIMESTAMP updated_at
     }
+    
+    orders{
+        INT id
+        INT cart_id
+        INT total
+        INT status
+        VARCHAR(255) fullname
+        VARCHAR(255) phone
+        VARCHAR(255) email
+        VARCHAR(255) address
+        VARCHAR(255) delivery
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
 ```
