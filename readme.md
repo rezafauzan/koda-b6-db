@@ -60,14 +60,9 @@ title: Coffeeshop Entity Relation Diagram
     carts{
         INT id
         INT user_id FK
-        TIMESTAMP created_at
-        TIMESTAMP updated_at
-    }
-
-    cart_items{
-        INT id
-        INT cart_id
-        INT product_id
+        VARCHAR(255) size
+        VARCHAR(255) hotice
+        VARCHAR(255) quantity
         TIMESTAMP created_at
         TIMESTAMP updated_at
     }
