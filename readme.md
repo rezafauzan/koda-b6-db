@@ -21,14 +21,14 @@ title: Coffeeshop Entity Relation Diagram
     }
 
     roles{
-        INT id 
+        INT id PK 
         VARCHAR(255) role_name
         TIMESTAMP created_at
         TIMESTAMP updated_at
     }
 
     testimonies {
-        INT id
+        INT id PK
         VARCHAR(255) name
         VARCHAR(255) proffesion
         VARCHAR(255) picture
@@ -39,8 +39,8 @@ title: Coffeeshop Entity Relation Diagram
     }
     
     products {
-        INT id
-        INT category_id
+        INT id PK
+        INT category_id FK
         BOOLEAN favorite_product
         VARCHAR(255) name
         VARCHAR(255) image1
@@ -58,7 +58,7 @@ title: Coffeeshop Entity Relation Diagram
     }
 
     carts{
-        INT id
+        INT id PK
         INT user_id FK
         VARCHAR(255) size
         VARCHAR(255) hotice
@@ -68,16 +68,16 @@ title: Coffeeshop Entity Relation Diagram
     }
 
     cart_items{
-        INT id
-        INT cart_id
-        INT product_id
+        INT id PK
+        INT cart_id FK
+        INT product_id FK
         TIMESTAMP created_at
         TIMESTAMP updated_at
     }
     
     orders{
-        INT id
-        INT cart_id
+        INT id PK
+        INT cart_id FK
         INT total
         INT status
         VARCHAR(255) fullname
