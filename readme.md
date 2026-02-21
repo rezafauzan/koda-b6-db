@@ -27,17 +27,6 @@ title: Coffeeshop Entity Relation Diagram
         TIMESTAMP updated_at
     }
 
-    testimonies {
-        INT id PK
-        VARCHAR(255) name
-        VARCHAR(255) proffesion
-        VARCHAR(255) picture
-        VARCHAR(255) review
-        INT rating
-        TIMESTAMP created_at
-        TIMESTAMP updated_at
-    }
-    
     products {
         INT id PK
         INT category_id FK
@@ -53,6 +42,13 @@ title: Coffeeshop Entity Relation Diagram
         INT rating
         INT review
         INT stock
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
+
+    product_categories {
+        INT id
+        VARCHAR(255) name
         TIMESTAMP created_at
         TIMESTAMP updated_at
     }
@@ -88,4 +84,18 @@ title: Coffeeshop Entity Relation Diagram
         TIMESTAMP created_at
         TIMESTAMP updated_at
     }
+
+        testimonies {
+        INT id PK
+        VARCHAR(255) name
+        VARCHAR(255) proffesion
+        VARCHAR(255) picture
+        VARCHAR(255) review
+        INT rating
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
+
+    users only one to only one roles : has
+    users only one to one or more carts : has
 ```
