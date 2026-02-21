@@ -101,4 +101,5 @@ title: Coffeeshop Entity Relation Diagram
     cart_items one or more to only one carts : has
     cart_items only one to only one products : has
     products only one to only one product_categories : has
+    orders only one to only one carts : has
 ```
