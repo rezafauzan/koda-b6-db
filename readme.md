@@ -18,4 +18,11 @@ title: Coffeeshop Entity Relation Diagram
     TIMESTAMP created_at
     TIMESTAMP updated_at
     }
+
+    roles{
+        INT id 
+        VARCHAR(255) role_name
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
 ```
