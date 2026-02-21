@@ -37,4 +37,23 @@ title: Coffeeshop Entity Relation Diagram
         TIMESTAMP created_at
         TIMESTAMP updated_at
     }
+    
+    products {
+        INT id
+        INT category_id
+        BOOLEAN favorite_product
+        VARCHAR(255) name
+        VARCHAR(255) image1
+        VARCHAR(255) image2
+        VARCHAR(255) image3
+        VARCHAR(255) image4
+        VARCHAR(255) description
+        INT price
+        FLOAT discount
+        INT rating
+        INT review
+        INT stock
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
 ```
