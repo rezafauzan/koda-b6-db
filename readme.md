@@ -63,4 +63,12 @@ title: Coffeeshop Entity Relation Diagram
         TIMESTAMP created_at
         TIMESTAMP updated_at
     }
+
+    cart_items{
+        INT id
+        INT cart_id
+        INT product_id
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
 ```
