@@ -27,6 +27,38 @@ title: Coffeeshop Entity Relation Diagram
         TIMESTAMP updated_at
     }
 
+    orders{
+        INT id PK
+        INT cart_id FK
+        INT total
+        INT status
+        VARCHAR(255) fullname
+        VARCHAR(255) phone
+        VARCHAR(255) email
+        VARCHAR(255) address
+        VARCHAR(255) delivery
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
+
+    carts{
+        INT id PK
+        INT user_id FK
+        VARCHAR(255) size
+        VARCHAR(255) hotice
+        VARCHAR(255) quantity
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
+
+    cart_items{
+        INT id PK
+        INT cart_id FK
+        INT product_id FK
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
+
     products {
         INT id PK
         INT category_id FK
@@ -52,40 +84,9 @@ title: Coffeeshop Entity Relation Diagram
         TIMESTAMP created_at
         TIMESTAMP updated_at
     }
-
-    carts{
-        INT id PK
-        INT user_id FK
-        VARCHAR(255) size
-        VARCHAR(255) hotice
-        VARCHAR(255) quantity
-        TIMESTAMP created_at
-        TIMESTAMP updated_at
-    }
-
-    cart_items{
-        INT id PK
-        INT cart_id FK
-        INT product_id FK
-        TIMESTAMP created_at
-        TIMESTAMP updated_at
-    }
     
-    orders{
-        INT id PK
-        INT cart_id FK
-        INT total
-        INT status
-        VARCHAR(255) fullname
-        VARCHAR(255) phone
-        VARCHAR(255) email
-        VARCHAR(255) address
-        VARCHAR(255) delivery
-        TIMESTAMP created_at
-        TIMESTAMP updated_at
-    }
 
-        testimonies {
+    testimonies {
         INT id PK
         VARCHAR(255) name
         VARCHAR(255) proffesion
