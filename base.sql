@@ -121,6 +121,7 @@ CREATE TABLE product_discounts (
 CREATE TABLE product_campaigns (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
+    description VARCHAR(255) NOT NULL,
     discount_id FLOAT NOT NULL,
     created_at TIMESTAMP DEFAULT NOW(),
     updated_at TIMESTAMP
@@ -288,4 +289,4 @@ INSERT INTO product_reviews (product_id, user_id, rating, messages) VALUES
 
 INSERT INTO product_discounts (discount_rate) VALUES (0.4), (0.7);
 
-INSERT INTO product_campaigns (name, discount_id) VALUES ('Flash Sale', 1), ('Mother Day', 2);
+INSERT INTO product_campaigns (name, description, discount_id) VALUES ('Flash Sale', 'We do Grand Opening so we cut off some price on some product, Explore now!', 1), ('Mother Day', 'Get one of our favorite menu for free!', 2);
