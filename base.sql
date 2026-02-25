@@ -29,6 +29,7 @@ CREATE TABLE users (
 CREATE TABLE user_profiles (
     id SERIAL PRIMARY KEY,
     user_id INT NOT NULL,
+    user_avatar VARCHAR(255) NOT NULL DEFAULT 'https://i.pravatar.cc/400?img=54',
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     address VARCHAR(255) NOT NULL,
@@ -166,17 +167,17 @@ INSERT INTO roles (role_name) VALUES ('Admin'), ('Member');
 
 INSERT INTO users (role_id, verified) VALUES (1, TRUE), (2, FALSE), (2, TRUE), (2, TRUE), (2, FALSE), (2, TRUE), (2, FALSE), (2, TRUE), (2, TRUE), (2, TRUE);
 
-INSERT INTO user_profiles (user_id, first_name, last_name, address) VALUES
-(1,'Reza','Fauzan Adhima','Jl. Terusan Soreang Cipatik No.16 RT:03 RW:01 Kp.Sukarame Desa Parungserab Kecamatan Soreang Kabupaten Bandung Jawa Barat'),
-(2,'Someone','<3','Jl. Terusan Soreang Cipatik Desa Parungserab Kecamatan Soreang Kabupaten Bandung Jawa Barat'),
-(3,'Orang','Khayalan','Planet Jupiter jl. ber gas'),
-(4,'Lumba','Lumba','Jl. Laut aman 1246'),
-(5,'Kucing','Putih','Jl. Thamrin 8'),
-(6,'Kucing','Putih','Jl. langit'),
-(7,'Kucing','Hallo','Jl. usaha'),
-(8,'Orang','Asing','Jl. antah berantah wkwk'),
-(9,'George','Harris','Jl. Matraman 20'),
-(10,'Hannah','Clark','Jl. Melawai 3');
+INSERT INTO user_profiles (user_id, user_avatar, first_name, last_name, address) VALUES
+(1, 'https://i.pravatar.cc/400?img=54', 'Reza','Fauzan Adhima','Jl. Terusan Soreang Cipatik No.16 RT:03 RW:01 Kp.Sukarame Desa Parungserab Kecamatan Soreang Kabupaten Bandung Jawa Barat'),
+(2, 'https://i.pravatar.cc/400?img=9', 'Someone','<3','Jl. Terusan Soreang Cipatik Desa Parungserab Kecamatan Soreang Kabupaten Bandung Jawa Barat'),
+(3, 'https://i.pravatar.cc/400?img=19', 'Orang','Khayalan','Planet Jupiter jl. ber gas'),
+(4, 'https://i.pravatar.cc/400?img=2', 'Lumba','Lumba','Jl. Laut aman 1246'),
+(5, 'https://i.pravatar.cc/400?img=3', 'Kucing','Putih','Jl. Thamrin 8'),
+(6, 'https://i.pravatar.cc/400?img=4', 'Kucing','Putih','Jl. langit'),
+(7, 'https://i.pravatar.cc/400?img=5', 'Kucing','Hallo','Jl. usaha'),
+(8, 'https://i.pravatar.cc/400?img=7', 'Orang','Asing','Jl. antah berantah wkwk'),
+(9, 'https://i.pravatar.cc/400?img=8', 'George','Harris','Jl. Matraman 20'),
+(10, 'https://i.pravatar.cc/400?img=17', 'Hannah','Clark','Jl. Melawai 3');
 
 INSERT INTO user_credentials (user_id, email, phone, password) VALUES
 (1,'reza.fauzan@example.com','085183356072','someone<3'),
@@ -270,7 +271,7 @@ INSERT INTO product_portions (product_id, portion_size, additional_price) VALUES
 (4, 'Small', 0),
 (4, 'Medium', 2000),
 (4, 'Large', 5000),
-(5, 'Regular', 0);
+(5, 'Regular', 0),
 (5, 'Medium', 5000);
 
 INSERT INTO product_reviews (product_id, user_id, rating, messages) VALUES
@@ -284,3 +285,7 @@ INSERT INTO product_reviews (product_id, user_id, rating, messages) VALUES
 (8, 8, 5, 'Strawberry Milkshake is delicious and refreshing, highly recommend.'),
 (9, 9, 4, 'Chicken Sandwich is tasty with fresh ingredients, satisfied.'),
 (10, 10, 5, 'Cheese Croissant is buttery and soft, one of the best I had!');
+
+INSERT INTO product_discounts (discount_rate) VALUES (0.4), (0.7);
+
+INSERT INTO product_campaigns (name, discount_id) VALUES ('Flash Sale', 1), ('Mother Day', 2);
